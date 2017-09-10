@@ -1,0 +1,97 @@
+Data_Jul_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-07 - Citi Bike trip data.csv")
+
+#To check which columns are there
+colnames(Data_Jul_2013)
+colnames(Data_Aug_2013)
+
+#Descriptive Analysis
+
+#Checking NA values of all attributes
+tripduration <- Data_Jul_2013$tripduration
+
+bad <- is.na(tripduration)
+
+any(is.na(bad))
+#-----
+starttime <- Data_Jul_2013$starttime
+
+bad <- is.na(starttime)
+
+any(is.na(bad))
+#-------
+stoptime <- Data_Jul_2013$stoptime
+
+bad <- is.na(stoptime)
+
+any(is.na(bad))
+#-------start.station.id <- Data_Jul_2013$start.station.id
+
+bad <- is.na(start.station.id)
+
+any(is.na(bad))
+#----------
+start.station.name <- Data_Jul_2013$start.station.name
+
+bad <- is.na(start.station.name)
+
+any(is.na(bad))
+#-------
+start.station.latitude <- data_July_2013$start.station.latitude
+
+bad <- is.na(start.station.latitude)
+
+any(is.na(bad))
+#start station longitude
+start.station.longitude <- data_July_2013$start.station.longitude
+
+bad <- is.na(start.station.longitude)
+
+any(is.na(bad))
+
+#end station id
+end.station.id <- data_July_2013$end.station.id
+
+bad <- is.na(end.station.id)
+
+any(is.na(bad))
+# end station name
+end.station.name <- data_July_2013$end.station.name
+
+bad <- is.na(end.station.name)
+
+any(is.na(bad))
+
+#way 1 to check NA values end.station.longitude in attribute
+end.station.longitude <- Data_Jul_2013$end.station.longitude
+
+bad <- is.na(end.station.longitude)
+
+any(is.na(bad))
+
+# check NA values bikeid  in attribute
+bikeid <- Data_Jul_2013$bikeid
+
+bad <- is.na(bikeid)
+
+any(is.na(bad))
+
+# check NA values bikeid  in attribute
+usertype <- Data_Jul_2013$usertype
+
+bad <- is.na(usertype)
+
+any(is.na(bad))
+#---
+# check NA values birth.year  in attribute
+
+
+DF <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-07 - Citi Bike trip data.csv", na.strings=c("NA","\\N","0"))
+
+new_DF <- subset(DF, is.na(DF$birth.year))
+
+nrow(new_DF)
+
+# check NA values gender  in attribute
+new_DF <- subset(DF, is.na(DF$gender))
+
+nrow(new_DF)
