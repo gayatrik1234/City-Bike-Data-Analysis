@@ -1,0 +1,66 @@
+Data_Jul_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-07 - Citi Bike trip data.csv")
+Data_Aug_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-08 - Citi Bike trip data.csv")
+Data_Sep_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-09 - Citi Bike trip data.csv")
+Data_Oct_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-10 - Citi Bike trip data.csv")
+Data_Nov_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-11 - Citi Bike trip data.csv")
+Data_Dec_2013 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2013-12 - Citi Bike trip data.csv")
+Data_Jan_2014 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2014-01 - Citi Bike trip data.csv")
+Data_Feb_2014 <- read.csv("/Users/Sushama/Desktop/Spring 2016/IS690Q Big Data/Project/Citibike data/2014-02 - Citi Bike trip data.csv")
+
+#To check which columns are there
+colnames(Data_Jul_2013)
+colnames(Data_Aug_2013)
+
+#To check first 6 records in files according to columns
+head(Data_Jul_2013)
+
+#To calcuate number of rows in each month's dataset
+x1 <- nrow(Data_Jul_2013)
+x2 <- nrow(Data_Aug_2013)
+x3 <- nrow(Data_Sep_2013)
+x4 <- nrow(Data_Oct_2013)
+x5 <- nrow(Data_Nov_2013)
+x6 <- nrow(Data_Dec_2013)
+x7 <- nrow(Data_Jan_2014)
+x8 <- nrow(Data_Feb_2014)
+
+# Defined vector X to get nrow of each dataset
+X <- c(x1,x2,x3,x4,x5,x6,x7,x8)
+
+plot(X)
+
+#Descriptive Analysis
+
+#way 1 to check NA values in attribute
+tripduration <- Data_Jul_2013$tripduration
+
+bad <- is.na(tripduration)
+
+any(is.na(bad))
+
+#way 2 to check NA values in attribute
+nrow(Data_Jul_2013[is.na(Data_Jul_2013$tripduration),])
+nrow(Data_Jul_2013[is.na(Data_Jul_2013$starttime),])
+
+#to calculate mean, min, max, median and 1st,3rd quatiles of all attributes
+summary(Data_Jul_2013)
+
+#To calculate standard deviation of attribute
+
+sd(tripduration,na.rm = FALSE)
+
+sd(tripduration)
+
+# Graphs 
+plot(tripduration,Data_Jul_2013$starttime)
+plot(tripduration,Data_Jul_2013$gender)
+plot(tripduration,Data_Jul_2013$usertype)
+barplot(X, xlab="Month Details",ylab="Number of transactions",ylim=c(0,1200000),main="Monthly Citi Bike usage statistics from Jul 13- Feb 14", names.arg= c("Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb"), col=c("darkblue","red"))
+                
+#-----
+#Birth.year and Gender Graph for July and AUgust files
+Y = c(174861,28,42)
+plot(Y, type = "o", main="July 2013 - UserType distribution with Gender value as Unknown", ylab = "Number of records", xlab = "Usertype")
+
+#--
+plot(Data_Jul_2013$starttime,Data_Jul_2013$tripduration)
