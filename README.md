@@ -1,12 +1,12 @@
 # City-Bike-Dataset-Analysis-using-R-Programming
 Data Analysis
 ========
-*  This is the final project of Big Data and Information Systems course in my graduation. 
-*  I used R studio and ArcGIS for coding and creating visualizations of the results  
+*  My final project for the Big Data and Information Systems course in my graduation
+*  I used R studio and ArcGIS for coding and creating visualizations of the predictions and findings 
 
 **Data Source**
  https://www.citibikenyc.com/system-data
- Description: The dataset focuses on the information about the 400+ bike stations within New York City that was recorded from 
+ * Description: The dataset focuses on the information about the 400+ bike stations within New York City that was recorded from 
  July 2013 to February 2014 and it calculates nearly to 0.8 Million for a month
  
  **Statistical Analysis**
